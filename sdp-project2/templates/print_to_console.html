@@ -1,0 +1,40 @@
+{% extends 'navbar.html' %}
+{% load static %}
+< html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print to console</title>
+</head>
+<body>
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col order-last">
+      First in DOM, ordered last
+        <div>
+<form method="post" action="{% url 'print_to_console' %}">
+    {% csrf_token %}
+    <label>Enter Text:</label>
+    <input type="text" name="sophiya" required>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+    </div>
+    </div>
+    <div class="col">
+      Second in DOM, unordered
+        <br><br>
+        <h1>
+
+            {{user_input }}
+            </h1>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
